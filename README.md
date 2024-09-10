@@ -1,7 +1,9 @@
 # Intro to R Workshop 2024
-### September 10 - 12
 
-## Notes
+- September 10 - 12
+
+### Notes
+
 
 git add .
 git status
