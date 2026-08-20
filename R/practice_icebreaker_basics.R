@@ -6,7 +6,7 @@ library(readxl)
 library(dplyr)
 # Use the read_excel function to load the class survey data
 icebreaker <-
-  read_excel("C:/logs/workshop/R/intro-r-2024/data/icebreaker_answers.xlsx")
+  read_excel("data/icebreaker_answers.xlsx")
 # Take a peek!
 
 # Create a travel_speed column in your data frame using vector operations and
@@ -15,6 +15,9 @@ icebreaker <-
   icebreaker %>% mutate(travel_speed = travel_distance / travel_time)
 # Look at a summary of the new variable--seem reasonable?
 summary(icebreaker)
+boxplot(icebreaker$travel_speed ~ icebreaker$travel_mode)
+hist(icebreaker$travel_distance)
+
 # Choose a travel mode, and use a pipe to filter the data by your travel mode
 icebreaker %>% filter(travel_mode == "light rail") %>%
   # Note the frequency of the mode (# of rows returned)
